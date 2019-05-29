@@ -1,0 +1,13 @@
+<h2>Heroes list</h2>
+
+<div *ngIf="loading" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
+<div *ngIf="!loading">
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
+      <img [src]="hero.image" class="thumbnail"> <span class="thumbnailText">{{hero.name}}</span> <img (click)="$event.stopPropagation();favorHero(hero);" class="favoriteIcon" [src]="hero.favorite ? favoredImage : unfavoredImage">
+    </li>
+  </ul>
+
+  <button type="button" (click)="previousHeroes()">Previous heroes</button>    {{offset}} - {{offset + 20}}     <button type="button" (click)="nextHeroes()">Next heroes</button>
+</div>
