@@ -1,27 +1,16 @@
-# Marvel
+# Marvel test for Peaks
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+This project was made for a test by Peaks. It's powered by Angular and should have used the marvel API (developer.marvel.com) as data source.
+Unfortunately, the tha marvel API was unresponsive, so I used mock data sets. While working, this solution is not ideal and accounts for the deviations
+between the tests and the final product : it should have been 20 heroes per page, with a more precise comic collection. I also simulate the loading time
+when "loading" the next/previous set of heroes.
 
-## Development server
+## Setup
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+If you don't have it yet, install angular as global : `npm install -g @angular/cli`.
+Clone the repository in a folder and then run `npm install` to get all dependencies.
+Once this is done, run `ng serve` and navigate to `http://localhost:4200/`;
 
-## Code scaffolding
+## Running tests
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run `npm test`.

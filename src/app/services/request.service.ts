@@ -82,59 +82,59 @@ let secondDataSet: Hero[] = [
 let heroComics = [
   {
     comicApparitions: 100,
-    firstComics: [1,2,3]
+    firstComics: ['1','2','3']
   },
   {
     comicApparitions: 101,
-    firstComics: [4,5,6]
+    firstComics: ['4','5','6']
   },
   {
     comicApparitions: 102,
-    firstComics: [7,8,9]
+    firstComics: ['7','8','9']
   },
   {
     comicApparitions: 103,
-    firstComics: [10,11,12]
+    firstComics: ['10','11','12']
   },
   {
     comicApparitions: 104,
-    firstComics: [13,14,15]
+    firstComics: ['13','14','15']
   },
   {
     comicApparitions: 105,
-    firstComics: [16,17,18]
+    firstComics: ['16','17','18']
   },
   {
     comicApparitions: 106,
-    firstComics: [19,20,21]
+    firstComics: ['19','20','21']
   },
   {
     comicApparitions: 107,
-    firstComics: [22,23,24]
+    firstComics: ['22','23','24']
   },
   {
     comicApparitions: 108,
-    firstComics: [25,26,27]
+    firstComics: ['25','26','27']
   },
   {
     comicApparitions: 109,
-    firstComics: [28,29,30]
+    firstComics: ['28','29','30']
   },
   {
     comicApparitions: 110,
-    firstComics: [31,32,33]
+    firstComics: ['31','32','33']
   },
   {
     comicApparitions: 111,
-    firstComics: [34,35,36]
+    firstComics: ['34','35','36']
   },
   {
     comicApparitions: 112,
-    firstComics: [37,38,39]
+    firstComics: ['37','38','39']
   },
   {
     comicApparitions: 113,
-    firstComics: [40,41,42]
+    firstComics: ['40','41','42']
   }
 ]
 
@@ -146,6 +146,7 @@ export class RequestService {
   constructor() { }
 
   getHeroesList(offset, callback) {
+    offset = offset || 0;
     offset += 100;
     const requestParams = {
       "url": "https://developer.marvel.com/v1/public/characters?limit=20&offset=" + offset,

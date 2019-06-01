@@ -16,6 +16,7 @@ export class HeroesComponent implements OnInit {
 
   offset:number = 0;
   loading:boolean = false;
+  selectedHero: Hero;
   heroes:Hero[];
   favoriteHeroes:Hero[] = [];
   favoredImage:string = "https://cdn3.iconfinder.com/data/icons/basicolor-votting-awards/24/198_star_favorite_vote_achievement-512.png";
@@ -33,7 +34,6 @@ export class HeroesComponent implements OnInit {
     });
   }
 
-  selectedHero: Hero;
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
     this.loading = true;
@@ -56,8 +56,11 @@ export class HeroesComponent implements OnInit {
         this.loading = false;
         return console.log(error);
       }
-      this.loading = false;
-      this.heroes = heroes;
+      // Since we use a mock dataset, I simulate loading time to show off my beautiful loader
+      setTimeout(() => {
+        this.heroes = heroes;
+        this.loading = false;
+      }, 1000);
     });
   }
 
@@ -69,8 +72,11 @@ export class HeroesComponent implements OnInit {
         this.loading = false;
         return console.log(error);
       }
-      this.loading = false;
-      this.heroes = heroes;
+      // Since we use a mock dataset, I simulate loading time to show off my beautiful loader
+      setTimeout(() => {
+        this.heroes = heroes;
+        this.loading = false;
+      }, 1000);
     });
   }
 
@@ -80,6 +86,9 @@ export class HeroesComponent implements OnInit {
       const heroIndex = this.findHeroIndex(hero, this.favoriteHeroes);
       this.favoriteHeroes.splice(heroIndex, 1);
     } else {
+      if (this.favoriteHeroes.length >= 5) {
+        return;
+      }
       hero.favorite = true;
       this.favoriteHeroes.push(hero);
       // Workaround to refresh view

@@ -10,7 +10,7 @@ import { Hero } from '../../../classes/hero';
 export class HeroComponent implements OnInit {
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: Hero
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
   ngOnInit() {
